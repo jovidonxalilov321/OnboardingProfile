@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:uygavazifa301/Onboarding/data/model/Onboarding_detail_model.dart';
 import 'package:uygavazifa301/Onboarding/data/model/onboarding_model.dart';
 import '../../data/repository/onboarding_repository.dart';
 

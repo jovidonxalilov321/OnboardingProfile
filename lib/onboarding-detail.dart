@@ -6,7 +6,6 @@ import 'package:uygavazifa301/utils.dart';
 
 import 'Onboarding/data/repository/onboarding_detail_repository.dart';
 import 'Onboarding/precentation/pages/Onboarding_detail_view.dart';
-import 'Onboarding/precentation/pages/onboarding_view.dart';
 import 'main.dart';
 
 void main() {
