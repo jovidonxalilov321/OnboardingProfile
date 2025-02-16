@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ApiClient {
-  Dio dio = Dio(BaseOptions(baseUrl: "http://192.168.9.122:8888/api/v1"));
+  Dio dio = Dio(BaseOptions(baseUrl: "http://10.10.1.30:8888/api/v1"));
 
   Future<List<dynamic>> fetchMyProfile() async {
     var response = await dio.get('/onboarding/list');

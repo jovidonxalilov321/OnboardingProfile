@@ -10,11 +10,30 @@ void main() {
 }
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  Categories({super.key});
+
+  final darkTheme = ThemeData(
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.redpink,
+      foregroundColor: Colors.black,
+    ),
+    colorScheme: ColorScheme(
+      brightness: Brightness.dark,
+      primary: AppColors.redpinkmain,
+      onPrimary: Colors.white,
+      secondary: AppColors.pink,
+      onSecondary: AppColors.redpink,
+      error: Colors.red,
+      onError: Colors.white,
+      surface: AppColors.pink,
+      onSurface: AppColors.redpinkmain,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: darkTheme,
       debugShowCheckedModeBanner: false,
       home: CategoriesPage(
         vm: CategoriesViewModel(
@@ -37,10 +56,7 @@ class CategoriesPage extends StatelessWidget {
     return ListenableBuilder(
       listenable: vm,
       builder: (context, child) => Scaffold(
-        backgroundColor: AppColors.bacround,
         appBar: AppBar(
-          backgroundColor: AppColors.bacround,
-
           toolbarHeight: 41,
           leading: Center(
             child: SvgPicture.asset(
@@ -68,13 +84,12 @@ class CategoriesPage extends StatelessWidget {
                     width: 28,
                     height: 28,
                     decoration: BoxDecoration(
-                      color: AppColors.redpink,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
                       child: SvgPicture.asset(
                         'asset/notifiler.svg',
-                        color: AppColors.pink,
+                        // color: AppColors.pink,
                       ),
                     ),
                   ),
@@ -83,13 +98,13 @@ class CategoriesPage extends StatelessWidget {
                     width: 28,
                     height: 28,
                     decoration: BoxDecoration(
-                      color: AppColors.redpink,
+                      // color: AppColors.redpink,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Center(
                       child: SvgPicture.asset(
                         'asset/search.svg',
-                        color: AppColors.pink,
+                        // color: AppColors.pink,
                       ),
                     ),
                   )
@@ -109,7 +124,6 @@ class CategoriesPage extends StatelessWidget {
                   Text(
                     vm.myCategory![9].title,
                     style: TextStyle(
-                        color: Colors.white,
                         fontSize: 14,
                         fontWeight: FontWeight.bold),
                   ),
@@ -131,7 +145,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![1].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -152,7 +165,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![2].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -177,7 +189,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![8].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -198,7 +209,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![7].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -223,7 +233,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![6].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -244,7 +253,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![5].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -269,7 +277,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![4].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -290,7 +297,6 @@ class CategoriesPage extends StatelessWidget {
                           Text(
                             vm.myCategory![3].title,
                             style: TextStyle(
-                                color: Colors.white,
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -329,7 +335,9 @@ class CategoriesPage extends StatelessWidget {
                 child: Center(
                   child: Row(
                     children: [
-                      SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       SvgPicture.asset('asset/bottom1.svg'),
                       SizedBox(
                         width: 30,
